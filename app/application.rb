@@ -23,8 +23,8 @@ class Application
         end 
       end 
     elsif req.path.match(/add/)
-      search_term
-    
+      search_term = req.params["item"]
+      resp.write handle_search(search_term)
     else
         resp.write "Path Not Found"
   end 
