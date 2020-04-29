@@ -25,6 +25,8 @@ class Application
     elsif req.path.match(/add/)
     search_tearm = req.params["item"]
     resp.write handle_search(search_term) 
+    else 
+      resp.write "Your cart is emmpty"
   end 
     resp.finish
   end
