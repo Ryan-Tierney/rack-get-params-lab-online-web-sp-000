@@ -27,6 +27,13 @@ class Application
     else
       return "Couldn't find #{search_term}"
     end
+    
+    if req.path.match(/cart/)
+      @@cart.each do |cart| 
+        resp.write "#{cart}\n"
+      end 
+    elsif req.path.match(/add/)
+    search_tearm = req.params["item"]
   end
   
   
