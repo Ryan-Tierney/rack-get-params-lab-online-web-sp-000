@@ -18,7 +18,14 @@ class Application
       resp.write "Path Not Found"
     end
     
-
+    if req.path.match(/cart/)
+      @@cart.each do |cart| 
+        resp.write "#{cart}\n"
+      end 
+    elsif req.path.match(/add/)
+    search_tearm = req.params["item"]
+    resp.write handle_search(search_term) 
+  end 
     resp.finish
   end
 
