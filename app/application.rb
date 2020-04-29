@@ -20,8 +20,8 @@ class Application
       else 
         @@cart.each do |item|
           resp.write "#{item}\n"
-    else
-      resp.write "Path Not Found"
+      else
+        resp.write "Path Not Found"
     end
     elsif req.path.match(/add/)
     search_tearm = req.params["item"]
